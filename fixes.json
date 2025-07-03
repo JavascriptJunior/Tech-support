@@ -1,0 +1,113 @@
+[
+  {
+    "title": "Windows 7 Installation Guide",
+    "keywords": "install windows 7 boot usb dvd setup",
+    "category": "Install",
+    "steps": [
+      "Download a Windows 7 ISO from a trusted source or Microsoft.",
+      "Use Rufus to create a bootable USB stick.",
+      "Insert the USB and boot from it (change boot order in BIOS if needed).",
+      "Choose language and partition during setup.",
+      "Let the system install and reboot."
+    ]
+  },
+  {
+    "title": "Fix Windows Boot BCD Error",
+    "keywords": "boot bcd error fix bootrec windows 10 11",
+    "category": "Boot",
+    "steps": [
+      "Boot from a Windows installation media (USB or DVD).",
+      "Click 'Repair your computer'.",
+      "Open Command Prompt.",
+      "Run: bootrec /fixmbr",
+      "Then: bootrec /fixboot",
+      "Then: bootrec /scanos",
+      "Then: bootrec /rebuildbcd",
+      "Restart the computer."
+    ]
+  },
+  {
+    "title": "Reset Forgotten Windows Admin Password",
+    "keywords": "forgot password windows 10 11 admin local account",
+    "category": "Account",
+    "steps": [
+      "Boot using Windows installation media.",
+      "Open Command Prompt (Shift + F10).",
+      "Type: `copy c:\\windows\\system32\\cmd.exe c:\\windows\\system32\\utilman.exe`",
+      "Reboot and click 'Ease of Access' on login screen.",
+      "Command prompt will open. Type: `net user Administrator newpassword`",
+      "Log in with the new password."
+    ]
+  },
+  {
+    "title": "Fix Windows Update Stuck at 0%",
+    "keywords": "windows update stuck 0% fix",
+    "category": "Update",
+    "steps": [
+      "Open Services app (Win + R → `services.msc`).",
+      "Stop 'Windows Update' and 'Background Intelligent Transfer Service'.",
+      "Navigate to `C:\\Windows\\SoftwareDistribution` and delete all contents.",
+      "Restart the services.",
+      "Check for updates again via Settings → Update & Security."
+    ]
+  },
+  {
+    "title": "Fix Blue Screen of Death (BSOD) - Memory Management",
+    "keywords": "blue screen bsod memory_management stop code",
+    "category": "Blue Screen",
+    "steps": [
+      "Restart the PC and run Windows Memory Diagnostic.",
+      "Update all drivers from the Device Manager.",
+      "Run `sfc /scannow` and `DISM /Online /Cleanup-Image /RestoreHealth`.",
+      "If issue persists, check for failing RAM or hardware conflicts."
+    ]
+  },
+  {
+    "title": "Fix Driver Installation Failed (Code 28)",
+    "keywords": "driver failed code 28 install device manager",
+    "category": "Driver",
+    "steps": [
+      "Right-click Start → Device Manager.",
+      "Find the device with a yellow triangle icon.",
+      "Right-click → Uninstall device.",
+      "Go to the manufacturer’s site and download the latest driver.",
+      "Install it and restart the PC."
+    ]
+  },
+  {
+    "title": "Fix USB Device Not Recognized",
+    "keywords": "usb device not recognized hardware fix",
+    "category": "Hardware",
+    "steps": [
+      "Unplug the USB device and plug it into a different port.",
+      "Try connecting the device to another PC.",
+      "Go to Device Manager → Expand 'Universal Serial Bus controllers'.",
+      "Right-click and uninstall all 'Unknown Devices'.",
+      "Restart the PC and plug the device back in."
+    ]
+  },
+  {
+    "title": "Fix Network Not Connecting on Windows 10",
+    "keywords": "wifi ethernet not connecting windows 10 network",
+    "category": "Network",
+    "steps": [
+      "Run the Network Troubleshooter: Settings → Network & Internet → Status.",
+      "Disable and re-enable the network adapter.",
+      "Open CMD and run: `ipconfig /release` then `ipconfig /renew`.",
+      "Reset Winsock: `netsh winsock reset` then restart.",
+      "Check router connection or reset router."
+    ]
+  },
+  {
+    "title": "Fix Black Screen After Login",
+    "keywords": "black screen display windows 10 11 issue",
+    "category": "Display",
+    "steps": [
+      "Press Ctrl + Shift + Esc to open Task Manager.",
+      "Run a new task → `explorer.exe` (restores UI if crashed).",
+      "Boot into Safe Mode and update display drivers.",
+      "Disable Fast Startup in Power Settings.",
+      "Perform a system restore if problem started recently."
+    ]
+  }
+]

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Windows Tech Support</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+<!-- Overlay -->
+<div class="overlay" id="overlay"></div>
+
+<!-- Sidebar -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <h1>🧰 FixCenter</h1>
+    <button class="close-btn" id="closeSidebar">×</button>
+  </div>
+  <nav>
+    <a href="#fixes" class="nav-link category-link" data-category="All">📂 All</a>
+    <a href="#" class="nav-link category-link" data-category="Boot">🔄 Boot</a>
+    <a href="#" class="nav-link category-link" data-category="Install">💾 Install</a>
+    <a href="#" class="nav-link category-link" data-category="Account">👤 Account</a>
+    <a href="#" class="nav-link category-link" data-category="Update">⬆️ Update</a>
+    <a href="#" class="nav-link category-link" data-category="Blue Screen">💙 BSOD</a>
+    <a href="#" class="nav-link category-link" data-category="Driver">🛠 Driver</a>
+    <a href="#" class="nav-link category-link" data-category="Hardware">💻 Hardware</a>
+    <a href="#" class="nav-link category-link" data-category="Network">🌐 Network</a>
+    <a href="#" class="nav-link category-link" data-category="Display">🖥 Display</a>
+    <hr>
+    <a href="#report" class="nav-link">📝 Report</a>
+    <a href="#downloads" class="nav-link">⬇️ Downloads</a>
+  </nav>
+</aside>
+
+<!-- Header -->
+<header class="header-inner">
+  <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+    <span id="hamburgerIcon">☰</span>
+  </button>
+  <h1>Windows Tech Support</h1>
+</header>
+
+<!-- Main Content -->
+<main>
+  <!-- Troubleshooting Guides -->
+  <section id="fixes" class="animated-section">
+    <h2>🔧 Troubleshooting Guides</h2>
+    <div id="fixContainer"></div>
+    <div id="noResults" style="display:none;">❌ No results found.</div>
+  </section>
+
+  <!-- ISO Downloads -->
+  <section id="downloads" class="iso-downloads animated-section">
+    <h3>⬇️ Official ISO Downloads</h3>
+    <ul>
+      <li><a href="https://www.microsoft.com/software-download/windows10" target="_blank">Windows 10</a></li>
+      <li><a href="https://www.microsoft.com/software-download/windows11" target="_blank">Windows 11</a></li>
+      <li><a href="https://archive.org/details/Win7Ultimate" target="_blank">Windows 7</a></li>
+      <li><a href="https://www.microsoft.com/software-download/windows8ISO" target="_blank">Windows 8.1</a></li>
+    </ul>
+  </section>
+
+  <!-- Report a Problem -->
+  <section id="report" class="animated-section">
+    <h3>📝 Report a Problem</h3>
+    <form id="reportForm">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Describe the issue..." rows="5" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+</main>
+
+<!-- PDF Export Hidden Container -->
+<div id="pdfExportContainer" style="display:none;"></div>
+
+<!-- Scripts -->
+<script src="script.js"></script>
+<script src="menu.js"></script> <!-- Separated menu toggle logic -->
+</body>
+</html>
